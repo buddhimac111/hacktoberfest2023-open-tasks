@@ -35,6 +35,15 @@ double squareRoot(double num) {
     return sqrt(num);
 }
 
+// Function to calculate the logarithm
+double logarithm(double base, double num) {
+    if (base <= 0 || num <= 0) {
+        printf("Error: Arguments of the log function must be positive.\n");
+        return 0.0;
+    }
+    return log(num) / log(base);
+}
+
 int main() {
 
     return 0;
