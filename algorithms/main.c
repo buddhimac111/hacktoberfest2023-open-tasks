@@ -30,6 +30,8 @@ int main()
     {
         printf("%d\t", data[i]);
     }
+
+    printf("\nNumber of Passes %d\n", pass);
     
 
     return 0;
