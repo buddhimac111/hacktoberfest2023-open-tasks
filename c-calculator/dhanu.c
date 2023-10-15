@@ -46,5 +46,15 @@ double logarithm(double base, double num) {
 
 int main() {
 
+    double num1, num2, result;
+    char operation;
+
+    printf("Advanced Calculator\n");
+    printf("Enter an operation (+, -, *, /, ^, sqrt, log): ");
+    scanf(" %c", &operation);
+
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
     return 0;
 }
