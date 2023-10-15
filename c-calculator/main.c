@@ -35,6 +35,8 @@ int main() {
             result = num1 / num2;
             break;
     }
+
+    printf("Result: %lf\n", result);
     
     return 0; // Exit with a success code
 }
