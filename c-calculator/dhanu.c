@@ -83,5 +83,8 @@ int main() {
             return 1; // Exit with an error code
     }
 
+    printf("Result: %lf\n", result);
+
+
     return 0;
 }
