@@ -56,5 +56,32 @@ int main() {
     printf("Enter two numbers: ");
     scanf("%lf %lf", &num1, &num2);
 
+    switch (operation) {
+        case '+':
+            result = add(num1, num2);
+            break;
+        case '-':
+            result = subtract(num1, num2);
+            break;
+        case '*':
+            result = multiply(num1, num2);
+            break;
+        case '/':
+            result = divide(num1, num2);
+            break;
+        case '^':
+            result = power(num1, num2);
+            break;
+        case 's':
+            result = squareRoot(num1);
+            break;
+        case 'l':
+            result = logarithm(num1, num2);
+            break;
+        default:
+            printf("Invalid operation entered.\n");
+            return 1; // Exit with an error code
+    }
+
     return 0;
 }
