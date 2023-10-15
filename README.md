@@ -1,7 +1,7 @@
 # hacktoberfest2023-open-tasks
 This repository is for Hacktoberfest 2023, with open tasks aimed at improving open-source contributions among students.
 
-- Fork this repository, add your file to a specific folder, and name your file with your GitHub username. If you have multiple files, create a directory in the designated folder with your GitHub username and add all files to it. Afterward, create a pull request (PR) to this repository. Ensure that your code is well-formatted, clean, and original—avoid copying and pasting from the internet. Please follow the instructions provided below as well.
+- Fork this repository, add your file to a specific folder, and name your file with your GitHub username. If you have multiple files, create a directory in the designated folder with your GitHub username and add all files to it. Afterward, create a pull request (PR) to this repository with #<issue-id> in PR description. Ensure that your code is well-formatted, clean, and original—avoid copying and pasting from the internet. Please follow the instructions provided below as well.
 
 ### PARTICIPATING IN HACKTOBERFEST
 
