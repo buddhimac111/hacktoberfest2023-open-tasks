@@ -25,6 +25,11 @@ int main()
         pass = pass + 1;
         i = i + 1;
     }
+
+    for (i = 0; i < size; i++)
+    {
+        printf("%d\t", data[i]);
+    }
     
 
     return 0;
