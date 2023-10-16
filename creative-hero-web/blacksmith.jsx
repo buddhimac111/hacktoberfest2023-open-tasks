@@ -4,6 +4,38 @@ import Container from "@/components/Container";
 import Image from 'next/image'
 import { motion } from "framer-motion";
 
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+}
+
+const item = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+}
+
+const styles = {
+    monoFonts: "text-center text-lg md:text-2xl",
+    bottomFooter: "text-center text-sx md:text-sm"
+}
+
 const Hero = () => { 
 
     return (
