@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HacktoberFest2023</title>
+    <!--css link-->
+    
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <script type="text/javascript">
+const header = document.querySelector("header");
+window.addEventListener ("scroll", function(){
+    header.classList.toggle("sticky", window.scrollY > 50);
+});
+
+
+let menu = document.querySelector('#menu-icon');
+let navlist = document.querySelector('.navlist');
+
+menu.onclick =() => {
+    menu.classList.toggle('bx-x');
+    navlist.classList.toggle('open');
+};
+
+window.onscroll = () => {
+    menu.classList.remove('bx-x');
+    navlist.classList.remove('open');
+}
+    </script>
+
+
+    <style type="text/css">
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    }
+    :root{
+        --bg-color:#170d00;
+        --second-bg-color:#202020;
+        --text-color:#fff;
+        --second-color:#ccc;
+        --main-color:#ffd505;
+        --big-font: 5rem;
+        --h2-font:3rem;
+        --p-font: 1.1rem;
+    }
+    body{
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+    header{
+       position: fixed;
+       width: 100%;
+       top: 0;
+       right: 0;
+       z-index: 1000;
+       display: flex;
+       align-items: center; 
+       justify-content: space-between;
+       background: transparent;
+       padding: 22px 15%;
+       border-bottom:1px solid transparent;
+       transition: all .45s ease;
+    }
+    .logo{
+        color: var(--text-color);
+        font-size: 35px;
+        font-weight:700;
+        letter-spacing: 1px;
+    }
+    span{
+        color: var(--main-color);
+    }
+    .navlist{
+        display: flex;
+    }
+    ul#remove {
+        list-style-type: none;
+        padding: 0;
+    }
+    .navlist a{
+        color: var(--second-color);
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0 25px;
+        transition: all .45s ease;
+    }
+    .navlist a:hover{
+        color: var(--main-color);
+    }
+    .navlist a.active{
+        color: var(--main-color);
+    }
+    #menu-icon{
+        font-size: 35px;
+        color: var(--text-color);
+        z-index: 10001;
+        cursor: pointer;
+        margin-left: 25px;
+        display: none;
+    }
+    section{
+        padding: 160px 15% 120px;
+    }
+    .home{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background-image: url(./home1.png);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+    }
+    .slide{
+        margin-bottom: 20px;
+    }
+    .one{
+        display: inline-block;
+        margin-right: 15px;
+        height: 32px;
+        padding: 0 15px;
+        line-height: 32px;
+        font-size: 20px;
+
+        font-weight: 500;
+        border-radius: 5px;
+        background: var(--main-color);
+        color: var(--text-color);
+    }
+    .two{
+        display: inline-block;
+        color: var(--second-color);
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .home-text h1{
+        font-size: 3rem;
+        font-weight: 600;
+        color: var(--text-color);
+        list-style: 1.1;
+        margin: 0 0 5px;
+    }
+    .home-text h3{
+        color: var(--text-color);
+        margin: 0 0 35px;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+    .home-text p{
+        color: var(--second-color);
+        font-size: var(--p-font);
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+    .button{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn{
+        display: inline-block;
+        padding: 12px 28px;
+        background: var(--main-color);
+        border-radius: 5px;
+        color: var(--text-color);
+        font-size: 1rem;
+        letter-spacing: 1px;
+        font-weight: 600;
+        transition: all .45s ease;
+    }
+    .btn:hover{
+        transform: scale(0.9);
+    }
+.btn2{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-left: 35px;
+}
+.btn2 span i{
+    height: 55px;
+    width: 55px;
+    background: var(--main-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: all 45s ease;
+}
+.btn2 span i :hover{
+    transform: scale(1.1) translateY(5px);
+}
+/*nav bar- visible -first js code after type this*/
+header.sticky{
+    background: var(--bg-color);
+    border-bottom: 1px solid #ffffff1a;
+    padding: 12px 15%;}
+
+    </style>
+
+    <!--header design-->
+    <header>
+        <a href="#" class="logo">HackTo<span>ber</span>23.</a>
+        
+        <ul class="navlist" id="remove">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+
+<!--home section-->
+    <section class="home" id ="home">
+        <div class="home-text">
+            <div class="slide">
+                <span class="one">Hello</span>
+                <span class="two">everyone</span>
+            </div>
+            <h1>Hacktoberfest registration is open now!</h1>
+            <h3>20<span>23</span></h3>
+            <p>Hacktoberfest 2023. Celebrate our 10th year supporting open source! </p>
+            <div class="button">
+              <a href="#" class="btn">Register Now</a> 
+              <a href="#" class="btn2"><span><i class='bx bx-play-circle' ></i></span>How to Participate</a> 
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>    
