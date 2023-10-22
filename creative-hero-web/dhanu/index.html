@@ -3,19 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Your Web Application</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Clickable Card with 3x3 Grid</title>
+    <style>
+      .item-clicked {
+        background-color: #68d391; /* Green background for clicked items */
+      }
+
+      .item-disabled {
+        background-color: #ccc; /* Gray background for disabled items */
+        pointer-events: none; /* Disable pointer events for these items */
+      }
+    </style>
   </head>
-  <body>
-    <header class="hero">
-      <div class="hero-content">
-        <h1>Welcome to Your Web Application</h1>
-        <p>Your tagline or a brief description of your app goes here.</p>
-        <div class="cta-buttons">
-          <a href="#" class="cta-button primary">Get Started</a>
-          <a href="#" class="cta-button secondary">Learn More</a>
+  <body class="bg-gray-200">
+    <div class="container mx-auto p-4">
+      <label for="itemCountSelect" class="text-lg font-semibold"
+        >Select the number of items to display:</label
+      >
+      <select
+        id="itemCountSelect"
+        class="px-3 py-2 border border-gray-300 rounded-md"
+      >
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="9" selected>9</option>
+      </select>
+
+      <div class="bg-white p-4 shadow-lg rounded-lg mt-4">
+        <div class="grid grid-cols-3 grid-rows-3 gap-4" id="itemGrid">
+          <!-- Items will be dynamically added here -->
         </div>
       </div>
-    </header>
+    </div>
+
+    <script>
+      const itemCountSelect = document.getElementById("itemCountSelect");
+      const itemGrid = document.getElementById("itemGrid");
+
+      function handleItemClick(item) {
+        if (item.classList.contains("item-disabled")) return; // Ignore disabled items
+        item.classList.add("item-clicked"); // Add clicked item style
+        alert("Clicked on " + item.textContent);
+        // You can perform other actions here
+      }
+
+      itemCountSelect.addEventListener("change", function () {
+        const selectedItemCount = parseInt(itemCountSelect.value);
+        // Clear the existing items
+        itemGrid.innerHTML = "";
+
+        // Add new items based on the selection
+        for (let i = 1; i <= 9; i++) {
+          const item = document.createElement("div");
+          item.className = "bg-blue-300 p-4 text-center cursor-pointer";
+          if (i <= selectedItemCount) {
+            item.addEventListener("click", () => handleItemClick(item));
+          } else {
+            item.classList.add("item-disabled");
+          }
+          item.textContent = "Item " + i;
+          itemGrid.appendChild(item);
+        }
+      });
+
+      // Initial population of the grid
+      itemCountSelect.dispatchEvent(new Event("change"));
+    </script>
   </body>
 </html>
